@@ -16,15 +16,10 @@ public class App {
         System.out.println("Введите текст");
         Scanner scanner = new Scanner(System.in);
         String myText = scanner.nextLine();
-        String[] myTextWords = myText.split(" ");
-        
-        int count=0;
-        for(int i= 0;i<myTextWords.length;i++){
-            if(!myTextWords[i].equals(" ")){
-                count++;
-            }
+        while(myText.indexOf("  ") > 0){
+            myText=myText.replaceAll("  ", " ");
         }
-        
-        System.out.printf("В этой строке %d слов%n",count);
+        String[] myTextWords = myText.split(" ");
+        System.out.printf("В этой строке %d слов%n",myTextWords.length);
     }
 }
